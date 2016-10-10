@@ -44,7 +44,7 @@ public class Pokemon {
 	 * Abilities - the move set of this pokemon generally pokemon can know 
 	 * only 4 moves at a time. This implementation will restrict to 2 moves.
 	 */
-	private String[] abilities;
+	private String abilities;
 	
 	/**
 	 * weaknesses - an array of the pokemon types that do 2x damage to this pokemon
@@ -78,41 +78,7 @@ public class Pokemon {
 	 * height - the length or height of the pokemon 
 	 */
 	private double height;
-	
-	/**
-	 * SPECIES - an array containing all known pokemon species
-	 */
-	private final static ArrayList<String> SPECIES = new ArrayList<String>
-			(Arrays.asList("Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon",
-			"Charizard","Squirtle","Wartortle","Blastoise","Caterpie","Metapod",
-			"Butterfree","Weedle","Kakuna","Beedrill","Pidgey","Pidgeotto","Pidgeot",
-			"Rattata","Raticate","Spearow","Fearow","Ekans","Arbok","Pikachu","Raichu",
-			"Sandshrew","Sandslash","NidoranFemale","Nidorina","Nidoqueen","NidoranMale",
-			"Nidorino","Nidoking","Clefairy","Clefable","Vulpix","Ninetales","Jigglypuff",
-			"Wigglytuff","Zubat","Golbat","Oddish","Gloom","Vileplume","Paras",
-			"Parasect","Venonat","Venomoth","Diglett","Dugtrio","Meowth","Persian","Psyduck",
-			"Golduck","Mankey","Primeape","Growlithe","Arcanine","Poliwag","Poliwhirl",
-			"Poliwrath","Abra","Kadabra","Alakazam","Machop","Machoke","Machamp",
-			"Bellsprout","Weepinbell","Victreebel","Tentacool","Tentacruel","Geodude",
-			"Graveler","Golem","Ponyta","Rapidash","Slowpoke","Slowbro","Magnemite",
-			"Magneton","Farfetch\'d","Doduo","Dodrio","Seel","Dewgong","Grimer","Muk",
-			"Shellder","Cloyster","Gastly","Haunter","Gengar","Onix","Drowzee",
-			"Hypno","Krabby","Kingler","Voltorb","Electrode","Exeggcute","Exeggutor",
-			"Cubone","Marowak","Hitmonlee","Hitmonchan","Lickitung","Koffing","Weezing","Rhyhorn",
-			"Rhydon","Chansey","Tangela","Kangaskhan","Horsea","Seadra","Goldeen",
-			"Seaking","Staryu","Starmie","Mr. Mime","Scyther","Jynx","Electabuzz",
-			"Magmar","Pinsir","Tauros","Magikarp","Gyarados","Lapras","Ditto","Eevee",
-			"Vaporeon","Jolteon","Flareon","Porygon","Omanyte","Omastar","Kabuto","Kabutops",
-			"Aerodactyl","Snorlax","Articuno","Zapdos","Moltres","Dratini","Dragonair",
-			"Dragonite","Mewtwo","Mew"));	
-	
-	/**
-	 * TYPES - an array of all possible pokemon types
-	 */
-	private static ArrayList<String> TYPES = new ArrayList<String>(Arrays.asList("Bug", "Dark", "Dragon",
-				"Electric", "Fighting", "Flying", "Fire", "Ghost", "Grass", "Ground", "Ice", "Normal",
-				"Poison", "Psychic", "Rock", "Steel", "Water", "Fairy"));
-	
+
 	/**
 	  * default constructor
 	  */
@@ -125,7 +91,7 @@ public class Pokemon {
 	/**
 	 * parameterized constructor
 	 */
-	public Pokemon(String speciesName, String[] type, String category, String[] abilities, String[] weakness, int hp,
+	public Pokemon(String speciesName, String[] type, String category, String abilities, String[] weakness, int hp,
 			int cp, double weight, double height) {
 		super();
 		setSpeciesName(speciesName);
@@ -148,15 +114,10 @@ public class Pokemon {
 
 	/**
 	 * @param speciesName the speciesName to set
-	 * @throws IllegalArgumentException if speciesName is not 
-	 * listed in Pokemon.SPECIES
 	 */
-	public void setSpeciesName(String speciesName) throws IllegalArgumentException {
-		if(SPECIES.contains(speciesName))
-				this.speciesName = speciesName;
-		else
-			throw new IllegalArgumentException(speciesName + 
-					" is not a known Pokemon species.");
+	public void setSpeciesName(String speciesName){
+		this.speciesName = speciesName;
+
 	}
 
 	/**
@@ -168,13 +129,9 @@ public class Pokemon {
 
 	/**
 	 * @param type the type to set
-	 * @throws IllegalArgumentException if type is not listed in Pokemon.TYPES
 	 */
-	public void setType(String[] type) throws IllegalArgumentException {
-		if(TYPES.contains(type))
-				this.type = type;
-		else
-			throw new IllegalArgumentException(type + " is not a known pokemon type.");
+	public void setType(String[] type){
+		this.type = type;
 	}
 
 	/**
@@ -194,14 +151,14 @@ public class Pokemon {
 	/**
 	 * @return the abilities
 	 */
-	public String[] getAbilities() {
+	public String getAbilities() {
 		return abilities;
 	}
 
 	/**
 	 * @param abilities the abilities to set
 	 */
-	public void setAbilities(String[] abilities) {
+	public void setAbilities(String abilities){
 		this.abilities = abilities;
 	}
 
