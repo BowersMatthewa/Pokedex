@@ -87,7 +87,6 @@ public class Pokemon {
 	}
 	
 
-	
 	/**
 	 * parameterized constructor
 	 */
@@ -185,9 +184,13 @@ public class Pokemon {
 
 	/**
 	 * @param hp the hp to set
+	 * @throws IllegalArgumentException - will throw and exception if hp < 0
 	 */
 	public void setHp(int hp) {
-		this.hp = hp;
+		if(hp>=0)
+			this.hp = hp;
+		else
+			throw new IllegalArgumentException("hp must be >= 0.");
 	}
 
 	/**
@@ -199,9 +202,13 @@ public class Pokemon {
 
 	/**
 	 * @param cp the cp to set
+	 * @throws IllegalArgumentException - if cp < 10.
 	 */
 	public void setCp(int cp) {
-		this.cp = cp;
+		if(cp > 10)
+			this.cp = cp;
+		else
+			throw new IllegalArgumentException("cp must be >= 10.");
 	}
 
 	/**
@@ -213,9 +220,13 @@ public class Pokemon {
 
 	/**
 	 * @param weight the weight to set
+	 * @throws IllegalArgumentException - if weight <= 0.
 	 */
 	public void setWeight(double weight) {
-		this.weight = weight;
+		if(weight > 0)
+			this.weight = weight;
+		else
+			throw new IllegalArgumentException("weight must be >= 0.")
 	}
 
 	/**
@@ -227,9 +238,13 @@ public class Pokemon {
 
 	/**
 	 * @param height the height to set
+	 * @throws IllegalArgumentException - height must be >= 0.
 	 */
 	public void setHeight(double height) {
-		this.height = height;
+		if(height < 0)
+			this.height = height;
+		else
+			throw new IllegalArgumentException("height must be >= 0.")
 	}
 	
 	

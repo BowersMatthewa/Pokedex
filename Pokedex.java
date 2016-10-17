@@ -134,4 +134,36 @@ public class Pokedex {
 		
 		System.out.print(ABILITIES);
 	}
+	
+	/**
+	 * addPokemon - adds a validated pokemon to the pokedex
+	 * @params pokemon - the pokemon that will be added to the pokedex 
+	 * 
+	 * use makePokemon() first to to generate a pokemon
+	 */
+	private void addPokemon(Pokemon pokemon){
+		pokedex.add(pokemon);
+	}
+	
+	/**
+	 * removePokemon - removes a pokemon from the pokedex using the pokemon object
+	 * 
+	 */
+	private void removePokemon(Pokemon pokemon){
+		pokedex.remove(pokemon);
+	}
+	
+	/**
+	 * getPokemon - returns the pokemon at a given index
+	 * @params i - the index of the pokemon
+	 * @throws IndexOutOfBoundsException - if the index is null or outside of the range
+	 */
+	public Pokemon getPokemon(int i){
+		if(i >= 0   && i < pokedex.length() && pokedex[i] != null)
+			return pokedex[i];
+		else throw new IndexOutOfBoundsException("There is no pokemon at that index");
+		
+	}
+	
+	
 }
